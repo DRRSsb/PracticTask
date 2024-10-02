@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru-RU">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link href="/static/style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/static/favicon-32x32.png">
+    <title>Форма</title>
+</head>
+
+<body>
+	<header class="container header">
+		<h1>Форма заказа</h1>
+		<button id="exit" class="exit">Выйти</button>
+	</header>
+	<main>
+		<div class="container">
+			<div class="forms" id="forms"></div>
+
+			<div class="container header">
+				<button class="form__button-add" id="form-add">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+					Добавить заказ
+				</button>
+			</div>
+			<button class="form__submit" id="submit">Отправить</button>
+		</div>
+		<div class="container__table">
+			<h2 class="heading-text">
+				Ваши заказы:
+			</h2>
+			<table id="table_device" class="table">
+				<thead>
+					<tr>
+						<th scope="col"
+							class="table__head table__head--first">
+							№</th>
+						<th scope="col"
+						class="table__head">
+							Вид услуги</th>
+						<th scope="col"
+						class="table__head">
+							Имя</th>
+						<th scope="col"
+						class="table__head">
+                        Телефон</th>
+						<th scope="col"
+						class="table__head">
+							Компания</th>
+						<th scope="col"
+						class="table__head">
+							Фотография</th>
+						<th scope="col"
+						class="table__head">
+							Профиль</th>
+						<th scope="col"
+						class="table__head">
+							Паспорт</th>
+						<th scope="col" class="table__head-button"></th>
+						<th scope="col" class="table__head-button"></th>
+						<th scope="col" class="table__head-button"></th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</main>
+
+    <template id="template__select-type">
+        <select class="table__field-input" name="type_device" id="newValue0" required>
+            <option value="Компьютер">Компьютер</option>
+            <option value="Принтер">Принтер</option>
+            <option value="Сканер">Сканер</option>
+            <option value="Ксерокс">Ксерокс</option>
+            <option value="Телефон">Телефон</option>
+            <option value="Шредер" >Шредер</option>
+          </select>
+    </template>
+
+    <template id="template__input-text">
+        <input size=8 class="table__field-input" type="text"required autocomplete="off">
+    </template>
+
+    <template id="template__table-button">
+        <button class="table__button"></button>
+    </template>
+
+	<template id="template-select-img">
+		<label>
+			<span class="form__upload-button">
+				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+				Загрузить
+			</span>
+			<input  class="form__field-input form__field-input--ghost" type="file" name="photo_serial_number_device"
+				accept=".png,.jpeg,.jpg" required>
+				<svg class="visually-hidden" id="check2" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+		</label>
+    </template>
+
+    <template id="template-img">
+        <img width="150">
+    </template>
+
+	<template id="template-form">
+		<form class="form">
+			<div class="form__content">
+				<label  class="form__label-text" id="error1">Выберите тип услуги:
+					<select class="form__field-input" name="type_device" id="type_device_select" required>
+						<option value="" disabled selected>Выберите тип услуги</option>
+						<option value="Компьютер">Компьютер</option>
+						<option value="Принтер">Принтер</option>
+						<option value="Сканер">Сканер</option>
+						<option value="Ксерокс">Ксерокс</option>
+						<option value="Телефон">Телефон</option>
+						<option value="Шредер">Шредер</option>
+					</select>
+				</label>
+				<p class="form__message-error visually-hidden">Выберите элемент в списке.</p>
+				<label class="form__label-text" id="error2">Введите имя:
+					<input class="form__field-input" type="text" name="model_device"
+						id="model_device_select" placeholder="Иванов Иван" required autocomplete="off">
+				</label>
+				<p class="form__message-error visually-hidden">Заполните это поле.</p>
+				<label class="form__label-text" id="error3">Введите телефон:
+					<input class="form__field-input" type="text" name="serial_number"
+						id="serial_number_device_select" placeholder="+7(900)000-00-00" required
+						autocomplete="off">
+				</label>
+				<p class="form__message-error visually-hidden">Заполните это поле.</p>
+				<label class="form__label-text" id="error4">Введите название компании:
+					<input class="form__field-input" type="text" name="ITAM_device" id="ITAM_device_select"
+						placeholder="IT Pro" required autocomplete="off">
+				</label>
+				<p class="form__message-error visually-hidden">Заполните это поле.</p>
+			</div>
+			<div class="form__content form__fields-upload-file">
+				<div>
+					<label class="form__label-file" id="error5">Фотография:
+						<span class="form__field-file">
+							<span class="form__upload-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+								Загрузить
+							</span>
+							<input class="form__field-input form__field-input--ghost" type="file" name="photo_device"
+							id="photo_device_select" accept=".png,.jpeg,.jpg" required>
+							<svg class="visually-hidden" id="check1" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+						</span>
+					</label>
+					<p class="form__field-input-tip">Файл не может быть больше 10МБ</p>
+					<img width="150" class="visually-hidden">
+				</div>
+				<div>
+					<label class="form__label-text" id="error6">Фотография профиля:
+						<span class="form__field-file">
+							<span class="form__upload-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+								Загрузить
+							</span>
+							<input class="form__field-input form__field-input--ghost" type="file" name="photo_serial_number_device"
+								id="photo_serial_number_device_select" accept=".png,.jpeg,.jpg" required>
+								<svg class="visually-hidden" id="check2" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+							</span>
+						</label>
+					<p class="form__field-input-tip">Файл не может быть больше 10МБ</p>
+					<img width="150" class="visually-hidden">
+				</div>
+				<div>
+					<label class="form__label-text" id="error7">Фотография паспорта?:
+						<span class="form__field-file">
+							<span class="form__upload-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+								Загрузить
+							</span>
+							<input class="form__field-input form__field-input--ghost" type="file" name="photo_ITAM_device"
+								id="photo_ITAM_device_select" accept=".png,.jpeg,.jpg" required>
+								<svg class="visually-hidden" id="check3" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+							</span>
+						</label>
+					<p class="form__field-input-tip">Файл не может быть больше 10МБ</p>
+					<img width="150" class="visually-hidden">
+				</div>
+			</div>
+			<button class="form__delete-button" type="button" id="form-delete" data-id="1">
+				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+			</button>
+		</form>
+
+	</template>
+	<script src="/static/updateTableData.js" type="module"></script>
+	<script src="/static/globalData.js" type="module"></script>
+    <script src="/static/scripts.js" type="module"></script>
+</body>
+
+</html>

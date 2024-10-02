@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru-RU">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+	<link href="/static/style-auth.css" rel="stylesheet">
+	<link rel="shortcut icon" href="/static/favicon-32x32.png">
+    <title>Добро пожаловать</title>
+</head>
+
+<body>
+	<main class="container">
+		<form class="form" id="form-auth">
+			<legend class="form__title">Вход</legend>
+			<label class="form__label-text">Email:
+				<input id="email-auth" type="text" required placeholder="example@yandex.ru" class="input">
+			</label>
+			<label class="form__label-text">Пароль:
+				<input id="password-auth" type="password" required class="input">
+			</label>
+			<div class="form__error visually-hidden" id="error-auth"></div>
+			<button class="button">Войти</button>
+			<span>
+				Ещё нету аккаунта?
+				<a href="/register">Регистрация</a>
+			</span>
+		</form>
+	</main>
+	<script src="/static/scripts-auth.js"></script>
+</body>
+
+</html>

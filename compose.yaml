@@ -1,0 +1,27 @@
+services:
+    db:
+        image: mongo
+        restart: always
+        ports:
+            - 27017:27017
+
+    app:
+        build: .
+        restart: always
+        volumes:
+        - myimage:/app/static/images
+        ports:
+            - 8000:8000
+        develop:
+            watch:
+                - action: sync
+                  path: ./templates
+                  target: /app/templates
+                - action: sync
+                  path: ./static
+                  target: /app/static
+                - action: sync
+                  path: ./app.py
+                  target: /app/app.py
+volumes:
+  myimage:

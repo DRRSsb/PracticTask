@@ -1,0 +1,240 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('/static/Roboto.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+}
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.container{
+	max-width: 1000px;
+	margin-inline: auto;
+}
+.container__table{
+	max-width: 1200px;
+	margin-inline: auto;
+}
+.form__fields-upload-file{
+	display: flex;
+	flex-direction: column;
+
+	gap:1rem;
+}
+
+.form__content{
+	display: flex;
+	flex-wrap: wrap;
+	gap:1rem;
+	align-items:start;
+}
+.form{
+  border-style: none;
+  display: flex;
+  flex-direction:column;
+  gap: 20px;
+  padding: 1rem;
+  border: 2px rgb(210, 210, 210) solid;
+  border-radius: 0.35rem;
+  margin-bottom: 10px;
+  align-items:start;
+}
+.form__button-add{
+  padding: 6px;
+  display: inline-flex;
+  align-items:center;
+  gap: 5px;
+}
+.form__submit{
+	padding: 6px;
+	display: inline-flex;
+	align-items:center;
+	gap: 5px;
+	margin-top: 10px;
+  }
+.form__field-input{
+  padding: 2.5px;
+  text-align: left;
+  background: rgb(255, 255, 255);
+  border-style: none;
+  border: 1px rgb(210, 210, 210) solid;
+  padding: 5px;
+  color:#000000;
+  cursor:pointer;
+  font-size: 15px;
+  border-radius: 0.35rem;
+}
+.form__field-input:focus{
+	border: 1px deepskyblue solid;
+	background: rgba(173, 216, 230, 0.25);
+}
+
+.table__field-input{
+	text-align: left;
+	background: rgb(255, 255, 255);
+	border-style: none;
+	border: 1px rgb(210, 210, 210) solid;
+	padding: 2px;
+	color:#000000;
+	cursor:pointer;
+	border-radius: 0.35rem;
+  }
+.form__field-input--ghost{
+  	clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.heading-text{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 35px;
+}
+.table{
+  max-width: 1250px;
+  min-width: 1250px;
+  margin: 0px auto;
+  text-align: center;
+  border-collapse: collapse;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+.table__head{
+  border-bottom: 2px solid rgb(210 210 210);
+}
+.table__head--first{
+  line-height: 30px;
+  width: 10px;
+}
+.table__button{
+  line-height: 30px;
+}
+.visually-hidden{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+.table__head-button{
+  width: 45px;
+}
+button{
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: 1px rgb(198, 198, 198) solid;
+  border-radius: 0.35rem;
+}
+button:not(:disabled){
+  cursor: pointer;
+}
+button:hover:not(:disabled) {
+  background: rgb(255, 255, 255);
+  color: #000000;
+  border-color: rgb(210, 210, 210);
+}
+
+button:disabled {
+  color: rgba(0, 0, 0, 0.5);
+  border: 1px rgba(210, 210, 210, 0.5) solid;
+  background: rgb(255, 255, 255);
+}
+.form__legend{
+  margin-left: 2rem;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+th,
+td{
+  padding: 8px 10px;
+}
+
+tbody > tr td{
+  border-top: 2px rgb(210, 210, 210) solid;
+}
+
+.form__upload-button{
+  background-color: rgb(255, 255, 255);
+  width: 6rem;
+  color: black;
+  border: 1px rgb(210, 210, 210) solid;
+  cursor: pointer;
+  border-radius: 0.35rem;
+  padding: 0.2rem;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items:center;
+  gap: 0.5rem;
+}
+.form__field-file{
+	display: inline-flex;
+	align-items:center;
+	gap: 0.5rem;
+  }
+.exit{
+	padding: 0.5rem;
+}
+.form__label-text{
+	width: 100%;
+	display: flex;
+	flex-direction:column;
+	gap:5px
+}
+.form__label-file{
+	width: 100%;
+	display: flex;
+	flex-direction:column;
+	gap:5px
+}
+.form__field-input-tip{
+	color: rgb(151, 151, 151);
+	margin: 0;
+	margin-top: 0.5rem;
+	font-size: 0.8rem;
+}
+
+.form__delete-button{
+	padding: 0.5rem;
+	display: flex;
+	align-items: center;
+}
+.form__error-submit{
+	color:red;
+}
+.forms{
+	margin-top: 10px; margin-bottom: 10px;
+}
+
+.form__field-input-error{
+	border: 1px rgb(255, 0, 0) solid;
+	background: rgba(255, 0, 0, 0.1);
+}
+.form__field-input:focus{
+	outline: none;
+}
+.form__field-lable-error{
+	color: red;
+}
+.form__message-error{
+	color: rgba(255, 0, 0);
+	margin: 0;
+	margin-top: -0.6rem;
+	font-size: 0.8rem;
+}
